@@ -2,7 +2,7 @@
 
 [TOC]
 
-##binlog日志介绍
+## binlog日志介绍
 1、binlog是mysql的二进制日志、  将对mysql的所有操作（增删改查）记录在日志文件中
 
 2、binlog会在每次执行 flush_log 命令时  重新生成一个新的binlog文件 如mysql_binlog_00001;
@@ -14,7 +14,7 @@
 ```sql
 start position  
 curd语句  
-end position
+end position    
 ```
 
 
@@ -34,7 +34,7 @@ end position
 master_mysql 开始binlog日志； 启动一个i/0线程 将binlog日志增量跟新 推送到slave_mysql;  slave_mysql会开启两个线程、 一个i/o线程将master_mysql 推送的数据同步到中继日志、  另外一个sql线程将 中继日志中的sql语句同步跟新到数据表  完成整个同步流程；
 
 
-##2、关键点
+## 2、关键点
 1、master_mysql  slave_mysql  server_id  必须唯一
 
 2、由于采用的是master_mysql 推送的方式  因此在多slave的时候 会加重master_mysql压力  导致同步缓慢

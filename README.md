@@ -13,7 +13,10 @@
 
 [锁](./lock.md)
 
+[主从](./master_slave.md)
+
 [笔记](./note.md)
+
 
 
 
